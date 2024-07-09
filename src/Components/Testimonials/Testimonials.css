@@ -16,6 +16,10 @@
     background: #212EA0;
 }
 
+.next-btn:hover, .back-btn:hover {
+    background: #4c59c8;
+}   
+
 .back-btn {
     right: auto;
     left: 0;
@@ -62,4 +66,44 @@
 
 .user-info h3 {
     color: #212Ea0;
+}
+
+@media (max-width: 800px) {
+    .testimonials {
+        padding: 0 40px;
+    }
+
+    .next-btn, .back-btn {
+        padding: 10px;
+        width: 35px;
+    }
+
+    .testimonials ul li {
+        padding: 10px;
+    }
+
+    .slide {
+        padding: 10px;
+    }
+
+    .slide img {
+        width: 50px;
+        border: 3px solid #212EA0;
+    }
+}
+
+@media (max-width: 600px) {
+    .user-info {
+        display: block;
+        margin-bottom: 10px;
+        font-size: 12px;
+    }
+
+    .user-info h3 {
+        font-size: 16px;
+    }
+
+    .slider p {
+        font-size: 12px;
+    }
 }

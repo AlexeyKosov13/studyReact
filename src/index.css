@@ -34,15 +34,38 @@ a {
   display: inline-flex;
   align-items: center;
   justify-self: center;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #e0d6d6;
+  color: #212121;
+ 
 }
 
 .btn img {
-  width: 30px;
+  width: 20px;
   margin-left: 10px;
 }
+
 
 .btn.dark-btn {
   background: #212EA0;
   color: #fff;
+  transition: 0.3s;
+}
 
+.btn.dark-btn:hover {
+  background: #5461d7;
+}
+
+@media (max-width: 1200px) {
+  .container {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .btn {
+    padding: 14px 22px;
+  }
 }

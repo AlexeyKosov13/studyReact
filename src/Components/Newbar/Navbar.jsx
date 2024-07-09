@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import './Navbar.css'
 import logo from '../../assets/logo2.png'
+import menu_icon from '../../assets/menu-icon.png'
+import { Link } from 'react-scroll'
 
 
 const Navbar = () => {
@@ -9,7 +11,13 @@ const Navbar = () => {
     window.addEventListener('scroll', ()=>{
       window.scrollY > 50 ? setSticky(true) : setSticky(false) 
     })
-  },[])
+  },[]);
+
+  const [mobileMenu, setMobileMenu] = useState(false);
+  const toggleMenu = () => {
+    mobileMenu ? setMobileMenu(false):setMobileMenu(true); 
+  }
+
   return (
     <nav className={`'container' ${sticky? 'dark-nav': ''}`}>
       <div className="company">
@@ -17,14 +25,15 @@ const Navbar = () => {
         <span className='companyName'>StudySchool</span>
       </div>
         
-        <ul>
-            <li>Home</li>
-            <li>Program</li>
-            <li>About Us</li>
-            <li>Campus</li>
-            <li>Testimonials</li>
-            <li><button className='btn'>Contact us</button></li>
+        <ul className={`effect mobileMenu?'':'hide-mobile-menu'`}>
+            <li data-hover="Home"><Link to='hero' smooth={true} offset={0} duration={500}>Home</Link></li>
+            <li data-hover="Program"><Link to='program' smooth={true} offset={-260} duration={500}>Program</Link></li>
+            <li data-hover="About Us"><Link to='about' smooth={true} offset={-150} duration={500}>About Us</Link></li>
+            <li data-hover="Campus"><Link to='campus' smooth={true} offset={-260} duration={500}>Campus</Link></li>
+            <li data-hover="Testimonials"><Link to='testimonials' smooth={true} offset={-260} duration={500}>Testimonials</Link></li>
+            <li ><Link to='contact' smooth={true} offset={-260} duration={500} className='btn'>Contact us</Link></li>
         </ul>
+        <img src={menu_icon} alt="" className='menu-icon' onClick={toggleMenu} />
     </nav>
   )
 }

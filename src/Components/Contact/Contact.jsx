@@ -39,8 +39,8 @@ const Contact = () => {
             <h3>Send us a message <img src={msg_icon} alt="" /></h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae nesciunt porro corporis cupiditate dolores quia obcaecati amet. Nostrum qui maiores quidem consequatur sit enim laboriosam? Laboriosam dolorum voluptate porro quas.</p>
             <ul>
-                <li><img src={mail_icon} alt="" />Contact@GreatStack.dev</li>
-                <li><img src={phone_icon} alt="" />+1 123-456-7890</li>
+                <li><img src={mail_icon} alt="" /><a href="mailto:Contact@GreatStack.dev">Contact@GreatStack.dev</a></li>
+                <li><img src={phone_icon} alt="" /> <a href="tel:+7988664562">+1 123-456-7890</a></li>
                 <li><img src={location_icon} alt="" />Massachusetts Ave, Cambridge<br/>MA 02145, United States</li>
             </ul>
         </div>

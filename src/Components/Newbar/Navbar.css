@@ -38,3 +38,84 @@ nav ul li {
     background: #212EA0;
     transition: 0.5s;
 }
+
+.menu-icon {
+    display: none;
+}
+
+.hide-mobile-menu {
+    right: -200px;
+}
+
+@media (max-width: 1000px) {
+    nav ul li {
+        margin: 10px 15px;
+        
+    }
+}
+
+@media (max-width: 840px) {
+    nav {
+        padding: 15px 10px;
+    }
+
+    nav ul {
+        position: fixed;
+        top: 0;
+        right: 0px;
+        bottom: 0;
+        background: #212EA0;
+        z-index: -1;
+        width: 200px;
+        padding-top: 70px;
+        transition: 0.5s;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 25px 40px;
+        position: relative;
+        text-shadow: 0 0 1px rgba(255,255,255,0.3);
+    }
+
+    .menu-icon {
+        display: block;
+        width: 30px;
+        cursor: pointer;
+    }
+}
+
+
+/* ------------effect----------- */
+.effect li:hover,
+.effect li:focus {
+	outline: none;
+}
+
+.effect li {
+	color: #a9b2b2;
+	text-shadow: 0 0 1px rgba(111,134,134,0.3);
+}
+
+.effect li::before {
+	color: #fff;
+	content: attr(data-hover);
+	position: absolute;
+	opacity: 0;
+	text-shadow: 0 0 1px rgba(255,255,255,0.3);
+	-webkit-transform: scale(1.1) translateX(10px) translateY(-10px) rotate(4deg);
+	-moz-transform: scale(1.1) translateX(10px) translateY(-10px) rotate(4deg);
+	transform: scale(1.1) translateX(10px) translateY(-10px) rotate(4deg);
+	-webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+	-moz-transition: -moz-transform 0.3s, opacity 0.3s;
+	transition: transform 0.3s, opacity 0.3s;
+	pointer-events: none;
+}
+
+.effect li:hover::before,
+.effect li:focus::before {
+	-webkit-transform: scale(1) translateX(0px) translateY(0px) rotate(0deg);
+	-moz-transform: scale(1) translateX(0px) translateY(0px) rotate(0deg);
+	transform: scale(1) translateX(0px) translateY(0px) rotate(0deg);
+	opacity: 1;
+}
